@@ -2,17 +2,12 @@ package edu.uw.intentdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.AdapterView;
-import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private static final String TAG = "**DEMO 2**";
-
-    //for listview
-    private SimpleCursorAdapter adapter;
-
-
+    private static final String TAG = "**Second**";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,23 +16,11 @@ public class SecondActivity extends AppCompatActivity {
         //action bar "back"
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
-
-        //TODO: fill in the link between columns and ids!
-        String[] cols = new String[]{};
-        int[] ids = new int[]{};
-
-        //should use a loader instead...
-        adapter = new SimpleCursorAdapter(
-                this,
-                R.layout.list_item,
-                null,
-                cols, ids,
-                0 //no flag
-        );
-        //set the adapter
-        AdapterView listView = (AdapterView)findViewById(R.id.listSecond);
-        listView.setAdapter(adapter);
+        Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+            String message = extras.getString(MainActivity.EXTRA_MESSAGE);
+            TextView subtitle = (TextView) findViewById(R.id.txtSecond);
+            subtitle.setText("Received: " + message);
+        }
     }
 }

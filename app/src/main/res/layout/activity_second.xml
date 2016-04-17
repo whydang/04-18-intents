@@ -25,14 +25,8 @@
         android:id="@+id/txtSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
+        android:textColor="#ff0000"
+        android:textSize="20dp"
         />
-
-    <ListView
-        android:id="@+id/listSecond"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
-
 
 </LinearLayout>
