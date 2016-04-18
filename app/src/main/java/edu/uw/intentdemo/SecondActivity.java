@@ -16,11 +16,13 @@ public class SecondActivity extends AppCompatActivity {
 
         //action bar "back"
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
+
         Bundle b = getIntent().getExtras();
-        String value = b.getString("edu.uw.intentdemo");
-        TextView subtitle = (TextView)findViewById(R.id.txtSecond);
-        subtitle.setText(value);
+        if (b != null) {
+            String value = b.getString("edu.uw.intentdemo");
+            TextView subtitle = (TextView) findViewById(R.id.txtSecond);
+            subtitle.setText(value);
+        }
 
     }
 }
