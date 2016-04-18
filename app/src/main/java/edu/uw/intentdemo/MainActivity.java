@@ -1,5 +1,6 @@
 package edu.uw.intentdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
         launchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.v(TAG, "Launch button pressed");
+
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                            // key,         value
+                intent.putExtra("edu.uw.intentdemo.message", "Hello from activity main!");
+                startActivity(intent);
 
 
             }
