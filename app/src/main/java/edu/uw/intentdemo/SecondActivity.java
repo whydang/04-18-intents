@@ -19,9 +19,12 @@ public class SecondActivity extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         if (b != null) {
-            String value = b.getString("edu.uw.intentdemo");
+            String value = b.getString("edu.uw.intentdemo.message");
+
             TextView subtitle = (TextView) findViewById(R.id.txtSecond);
-            subtitle.setText(value);
+            if (subtitle != null) {
+                subtitle.setText(value);
+            }
         }
 
     }
